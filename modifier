@@ -1,0 +1,11 @@
+import "hardhat/console.sol";
+contract Modifier{
+    modifier Add(uint a, uint b){
+        require(a+b > 0);  // Just an example condition
+        console.log(a+b);
+        _;  // Allows execution of the function if conditions pass
+    }
+    function add(uint a, uint b) public Add(a,b) returns(uint _x) {
+        _x=5;
+    }
+}
